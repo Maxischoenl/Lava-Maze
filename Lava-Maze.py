@@ -518,7 +518,7 @@ class Labyrinth(arcade.Window):
         self.Pfeil3.center_y = 25
         self.Pfeil3_liste.append(self.Pfeil3)
 
-        self.Pfeil4 = arcade.Sprite("Pfeil4.png")
+        self.Pfeil4 = arcade.Sprite("Pfeil4 .png")
         self.Pfeil4.center_x = 920
         self.Pfeil4.center_y = 50
         self.Pfeil4_liste.append(self.Pfeil4)
@@ -561,8 +561,10 @@ class Labyrinth(arcade.Window):
             self.spieler.change_x = 1.6
             self.Pfeil2.texture = arcade.load_texture("pfeil2_grün.png")
         if arcade.check_for_collision_with_list(mauszeiger_sprite, self.Pfeil3_liste):
+            self.Pfeil3.texture = arcade.load_texture("Pfeil3_grün.png")
             self.spieler.change_y = -1.6      
         if arcade.check_for_collision_with_list(mauszeiger_sprite, self.Pfeil4_liste):
+            self.Pfeil4.texture = arcade.load_texture("Pfeil4_grün.png")
             self.spieler.change_x = -1.6
 
     def on_mouse_release(self, x, y, button, modifiers):
@@ -571,9 +573,10 @@ class Labyrinth(arcade.Window):
             self.Pfeil1.texture = arcade.load_texture("Pfeil.png")
             self.spieler.change_x = 0
             self.Pfeil2.texture = arcade.load_texture("pfeil2.png")
-            self.spieler.change_y = 0     
+            self.spieler.change_y = 0
+            self.Pfeil3.texture = arcade.load_texture("Pfeil3.png")     
             self.spieler.change_x = 0
-
+            self.Pfeil4.texture = arcade.load_texture("Pfeil4 .png")
 
     def on_draw(self):
         self.clear()
